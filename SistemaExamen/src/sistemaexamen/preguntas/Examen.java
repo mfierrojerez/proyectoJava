@@ -11,6 +11,7 @@ import sistemaexamen.preguntas.Selec_Mul_Pregunta;
 public class Examen {
     private tiposPregunta [] preguntas = new tiposPregunta[10];
     private int contadorPreguntas;
+    private int totalPuntaje;
     
     public void agregaPregunta(tiposPregunta pregunta) {
         if (contadorPreguntas < preguntas.length) {
@@ -32,6 +33,7 @@ public class Examen {
         for (int i = 0; i < contadorPreguntas; i++) {
             System.out.println("Pregunta " + (i + 1) + ":");
             if (preguntas[i].buscar()) {
+                totalPuntaje=totalPuntaje + preguntas[i].getPuntaje() ;
                 respuestasCorrectas++;
             }
         }
@@ -39,6 +41,7 @@ public class Examen {
         float porcentaje = (float) respuestasCorrectas / contadorPreguntas * 100;
         System.out.println("Respuestas correctas: " + respuestasCorrectas + " de " + contadorPreguntas);
         System.out.println("Porcentaje de respuestas correctas: " + porcentaje + "%");
+        System.out.println("Puntaje total: "+totalPuntaje);
     }
     
 }
