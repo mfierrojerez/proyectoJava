@@ -23,7 +23,7 @@ public class Examen {
     
     public void darExam() {
         if (contadorPreguntas == 0) {
-            System.out.println("El examen está vacío. Agrega preguntas primero.");
+            System.out.println("El examen esta vacio. Agrega preguntas primero.");
         }
 
         int respuestasCorrectas = 0;
