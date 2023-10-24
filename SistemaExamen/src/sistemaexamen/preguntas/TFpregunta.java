@@ -14,7 +14,7 @@ public class TFpregunta extends tiposPregunta{
     
     public boolean buscar(){
         Scanner scanner = new Scanner(System.in);
-        int intentos = 5;
+        int intentos = 3;
         while (intentos>0) {
             try{
                 System.out.print(getTextoPregunta() + " (T/F): ");

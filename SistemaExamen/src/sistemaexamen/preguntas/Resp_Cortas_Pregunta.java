@@ -15,28 +15,20 @@ public class Resp_Cortas_Pregunta extends tiposPregunta{
     public boolean buscar() {
         Scanner scanner = new Scanner(System.in);
 
-        int intentos = 3; 
+        try {
+            System.out.print(getTextoPregunta());
+            String respuestaUsuario = scanner.nextLine();
 
-        while (intentos > 0) {
-            try {
-                System.out.print(getTextoPregunta());
-                String respuestaUsuario = scanner.nextLine();
-
-                if (respuestaUsuario.equalsIgnoreCase(respuestaCorrecta)) {
-                    System.out.println("Respuesta correcta!");
-                    return true;
-                } else {
-                    throw new IllegalArgumentException("Respuesta incorrecta");
-                }
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-                intentos--;
-                System.out.println("Intentos restantes: " + intentos);
+            if (respuestaUsuario.equalsIgnoreCase(respuestaCorrecta)) {
+                System.out.println("Respuesta correcta!");
+                return true;
+            } else {
+                throw new IllegalArgumentException("Respuesta incorrecta");
             }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
 
-        System.out.println("Intentos superados, pregunta fallida");
-        System.out.println("Respuesta correcta: " + respuestaCorrecta);
         return false;
         
     }
