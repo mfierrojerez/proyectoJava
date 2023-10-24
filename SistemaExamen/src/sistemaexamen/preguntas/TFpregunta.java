@@ -16,27 +16,34 @@ public class TFpregunta extends tiposPregunta{
         Scanner scanner = new Scanner(System.in);
         int intentos = 5;
         while (intentos>0) {
-            System.out.print(getTextoPregunta() + " (T/F): ");
-            String respuestaUsuario = scanner.nextLine().toLowerCase();
+            try{
+                System.out.print(getTextoPregunta() + " (T/F): ");
+                String respuestaUsuario = scanner.nextLine().toLowerCase();
 
-            if (respuestaUsuario.equals("t")) {
-                if (respuestaCorrecta==true) {
-                    System.out.println("Respuesta correcta!");
-                    return true;
-                } 
-                break;
+                if (respuestaUsuario.equals("t")) {
+                    if (respuestaCorrecta==true) {
+                        System.out.println("Respuesta correcta!");
+                        return true;
+                    }
+                    System.out.println("Respuesta incorrecta"+"\n Respuesta correcta: "+respuestaCorrecta);
+                    return false;
                 
-            } else if (respuestaUsuario.equals("f")) {
-                if (respuestaCorrecta==false) {
-                    System.out.println("Respuesta correcta!");
-                    return true;
-                } 
-                break;
+                } else if (respuestaUsuario.equals("f")) {
+                    if (respuestaCorrecta==false) {
+                        System.out.println("Respuesta correcta!");
+                        return true;
+                    } 
+                    System.out.println("Respuesta incorrecta"+"\n Respuesta correcta: "+respuestaCorrecta);
+                    return false;
+                }
                 
-            }
-            intentos--;
-            System.out.println("Respuesta no válida. Por favor, responda 'T' o 'F', intentos: "+intentos);
+                throw new IllegalArgumentException("Respuesta no valida. Por favor, responda 'T' o 'F'");
             
+            }catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                intentos--;
+                System.out.println("Intentos restantes: " + intentos);
+            }                                                                           
         }
         System.out.println("Intentos superados, pregunta fallida");
         System.out.println("Respuesta correcta: "+respuestaCorrecta);

@@ -17,7 +17,7 @@ public class SistemaExamen {
 
         // Agregar preguntas al examen
         
-        examen.agregaPregunta(new Selec_Mul_Pregunta("¿Cual es la capital de Francia?",2, new String[]{"Paris", "Madrid", "Londres", "Berlin"} , 0));
+        examen.agregaPregunta(new Selec_Mul_Pregunta("Cual es la capital de Francia?",2, new String[]{"Paris", "Madrid", "Londres", "Berlin"} , 0));
         examen.agregaPregunta(new TFpregunta("La Tierra gira alrededor del Sol.",1, true));
         examen.agregaPregunta(new Resp_Cortas_Pregunta("Escribe rojo:",1, "rojo"));
 
