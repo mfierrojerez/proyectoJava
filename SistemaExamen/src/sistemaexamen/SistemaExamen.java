@@ -1,6 +1,6 @@
 
 package sistemaexamen;
-
+//jsdnfjksnbdkgjsnkdgndskfn gvkdskgnksgksnkjdgbsk gvks
 import sistemaexamen.preguntas.Examen;
 import sistemaexamen.preguntas.tiposPregunta;
 import sistemaexamen.preguntas.TFpregunta;
